@@ -1,0 +1,45 @@
+.App{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+} 
+
+.button__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+button {
+  font-size: 40px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 10px;
+}
+
+.yes {
+  background-color: #FF0800;
+  color: white;
+}
+
+.no {
+  background-color: pink;
+  color: white;
+}
+
+.rizz {
+  min-height: 200px;
+  max-height: 300px;
+}
+
