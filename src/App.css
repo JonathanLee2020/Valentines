@@ -1,3 +1,8 @@
+ * {
+  font-family: 'Roboto', sans-serif;
+
+ }
+
 .App{
   display: flex;
   align-items: center;
@@ -11,6 +16,8 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 } 
 
 .button__container {
@@ -34,12 +41,15 @@ button {
 }
 
 .no {
-  background-color: pink;
+  background-color: #eec0c8;
   color: white;
 }
 
 .rizz {
-  min-height: 200px;
-  max-height: 300px;
+  width: 300px;
+}
+
+.subtext {
+  text-align: center;
 }
 
