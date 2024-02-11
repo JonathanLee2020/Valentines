@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect, useRef } from "react"
 import mochaRizz from "./assets/mocha rizz.gif"
@@ -11,6 +10,11 @@ import baseBanana from "./assets/banana cat.webp"
 import bananaCatCrying1 from "./assets/banana cat crying.gif"
 import bananaCatCrying2 from "./assets/banana-cat-crying more.gif"
 import pleaseCat from "./assets/pleasecat.gif"
+import shakingfootcat from "./assets/shakingFootCat.gif"
+import sadPringlesCat from "./assets/sad pringles cat.gif"
+import chosoCat from "./assets/choso cat.gif"
+import dancingCat from "./assets/dancingcat.gif"
+
 
 // yes images
 import happyCat from "./assets/happy cat.gif"
@@ -27,7 +31,18 @@ clicking no will generate 8 messages; the eight phrase will remove the no button
 
 */
 function App() {
-  const noImages = [huhCat, sadMeowCat, ]
+  const noImages = [
+    huhCat, 
+    baseBanana, 
+    bananaCatCrying1, 
+    bananaCatCrying2, 
+    shakingfootcat, 
+    pleaseCat,
+    pleaseCat,
+    sadPringlesCat,
+    chosoCat,
+    dancingCat
+  ]
   const phrases = [
     "No😤",
     "are you sure?",
@@ -50,7 +65,7 @@ function App() {
   const [isNoHovered, setNoHovered] = useState(false);
   const [isUpdating, setUpdate] = useState(false);
   const [url, setUrl] = useState(mochaRizz)
-  // const phrases = ["no", "please", "watch me get rid of the button"];
+  const [noText, setNoText] = useState("No😤")
   const yesButtonStyle = {
     backgroundColor: isYesHovered ? "#FF033E" : "#FF033E",
     transform: isYesHovered ? 'scale(1.1)' : 'scale(1)',
@@ -69,19 +84,26 @@ function App() {
 
   function handleObjection() {
     console.log("no selected gaming");
-    if (objectionCount === phrases.length - 2 && isUpdating === false) {
+    if (objectionCount > phrases.length - 2) return;
+    setObjectionCount((prev) => prev + 1);
+       setUrl(noImages[objectionCount])
+       console.log(`phrases.len - 2 is ${phrases.length - 2}, obj count is ${objectionCount}, it should say ${phrases[objectionCount]}`)
+      //  setNoText(phrases[objectionCount])
+    if (objectionCount === phrases.length - 2) {
       console.log("about to delete no...")
       setUpdate(true);
       setUrl(smugDog);
+      
       setTimeout(() => {
         setFinalStraw(true);
         setUrl(mochaRizz)
       }, 3000)
       return;
-    } else if (isUpdating === true) return
-    else{
-       setObjectionCount(objectionCount + 1);
-    }
+    } 
+    // else if (isUpdating === true) return
+    // else{
+       
+    // }
   }
 
   function handleYesClick() {
