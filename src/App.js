@@ -15,7 +15,6 @@ import sadPringlesCat from "./assets/sad pringles cat.gif"
 import chosoCat from "./assets/choso cat.gif"
 import dancingCat from "./assets/dancingcat.gif"
 
-
 // yes images
 import happyCat from "./assets/happy cat.gif"
 import kissCat from "./assets/kiss-kitty.gif"
@@ -40,6 +39,7 @@ function App() {
     pleaseCat,
     pleaseCat,
     sadPringlesCat,
+    judgementalCat,
     chosoCat,
     dancingCat
   ]
@@ -53,6 +53,7 @@ function App() {
     "pretty pretty please🙏",
     "if you keep saying no, It will make me very sad",
     "if you keep saying no, It will make me very very sad",
+    "BABEEE i'm side eyeing you right nowwww",
     "Ok Babe, I'll stop asking you 🙁",
     "YOU RLY THOUGHT BABE 😤",
     "installing mandatory update j.x12: emergency protocol: penguin 😈🐧",
@@ -67,13 +68,13 @@ function App() {
   const [url, setUrl] = useState(mochaRizz)
   const [noText, setNoText] = useState("No😤")
   const yesButtonStyle = {
-    backgroundColor: isYesHovered ? "#FF033E" : "#FF033E",
+    backgroundColor: isYesHovered ? "#E31837" : "#FF033E",
     transform: isYesHovered ? 'scale(1.1)' : 'scale(1)',
     transition: 'background-color 0.2s ease, transform 0.2s ease',
   }
 
   const noButtonStyle = {
-    backgroundColor: isNoHovered ? "#eec0c8" : "##FFC0CB",
+    backgroundColor: isNoHovered ? "#FFC0CB" : "#FFC0CB",
     transform: isNoHovered ? 'scale(1.1)' : 'scale(1)',
     transition: 'background-color 0.2s ease, transform 0.2s ease',
   }
@@ -97,7 +98,7 @@ function App() {
       setTimeout(() => {
         setFinalStraw(true);
         setUrl(mochaRizz)
-      }, 3000)
+      }, 2500)
       return;
     } 
     // else if (isUpdating === true) return
