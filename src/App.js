@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import mochaRizz from "./assets/mocha rizz.gif"
 
 // no images
@@ -56,9 +56,9 @@ function App() {
     "BABEEE i'm side eyeing you right nowwww",
     "Ok Babe, I'll stop asking you 🙁",
     "YOU RLY THOUGHT BABE 😤",
-    "installing mandatory update j.x12: emergency protocol: penguin 😈🐧",
+    "EMERGENCY PROTOCOL: installing mandatory update...😈",
   ]
-  const yesImages = [happyCat, kissCat];
+  // const yesImages = [happyCat, kissCat];
   const [agreed, setAgreed] = useState(false);
   const [isFinalStraw, setFinalStraw] = useState(false);
   const [objectionCount, setObjectionCount] = useState(0);
@@ -84,14 +84,10 @@ function App() {
 
 
   function handleObjection() {
-    console.log("no selected gaming");
     if (objectionCount > phrases.length - 2) return;
     setObjectionCount((prev) => prev + 1);
        setUrl(noImages[objectionCount])
-       console.log(`phrases.len - 2 is ${phrases.length - 2}, obj count is ${objectionCount}, it should say ${phrases[objectionCount]}`)
-      //  setNoText(phrases[objectionCount])
     if (objectionCount === phrases.length - 2) {
-      console.log("about to delete no...")
       setUpdate(true);
       setUrl(smugDog);
       
@@ -101,14 +97,9 @@ function App() {
       }, 2500)
       return;
     } 
-    // else if (isUpdating === true) return
-    // else{
-       
-    // }
   }
 
   function handleYesClick() {
-    console.log("clicked");
     setUrl(mochaHug);
     setAgreed(true)
   }
@@ -122,9 +113,7 @@ function App() {
   return (
 
     <div className="App">
-      {/* <img src={bananaCatCrying1} alt="" /> */}
       <img src="./assets/happy cat.gif" alt="" />
-      {/* <div className="container"> */}
       <div className="title__text">
         { }
         <h1>
